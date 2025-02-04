@@ -1197,7 +1197,7 @@ public class DFSStripedOutputStream extends DFSOutputStream
 
   @Override
   protected synchronized void closeImpl() throws IOException {
-    boolean recoverLeaseOnCloseException = dfsClient.getConfiguration().getRecoverLeaseOnCloseException();
+    boolean recoverLeaseOnCloseException = dfsClient.getConf().getRecoverLeaseOnCloseException();
     try {
       if (isClosed()) {
         exceptionLastSeen.check(true);
